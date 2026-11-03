@@ -1,0 +1,458 @@
+/* Palette der ganzen Seite, anruf z.B. color: var(--color-text);*/
+:root {
+  --color-background: #050505; /*tiefschwarzer Ton */
+  --color-surface: #12100f; /*etwas helleres, bräunliches Dunkelgrau*/
+  --color-heading: #f4efe7; /*warmes, cremiges Weiß für Überschriften*/
+  --color-text: #c9c1b8; /*etwas dunkleres, weicheres Weißgrau für normalen Lesetext*/
+  --color-primary: #ff5a3d; /*Rotorange für primäre Elemente*/
+  --color-mars: #e84a22; /*kräftiges Mars-Rot für thematische Akzente*/
+  --color-mars-dark: #7f2416; /*dunkles Rostrot, ideal für Hover-Effekte oder Schatten.*/
+  --color-border: #4a3832; /*Braunton für Rahmenlinien und Trennstriche.*/
+  --color-border-grau: #666;
+  
+  
+  --font-main: Trebuchet MS, Arial, sans-serif;
+}
+* 	{
+    box-sizing: border-box; /*bleibt ein Element mit gegebene width  (z.B. 200px exakt 200px) breit. Innenabstände und Rahmen (padding und Border) werden nach innen gerechnet. */
+    margin: 0;
+    padding: 0;
+	
+    }
+
+body{
+	width: 100vw;
+	height: 100%;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	background-color: var(--color-background);
+}
+
+/*div{
+	border: 2px solid var(--color-mars);
+	margin: 2px;
+}*/
+.logo span,
+    .active,
+    .eyebrow {
+    color: var(--color-mars);
+    }
+
+.flex{
+	display: flex;	
+}
+
+.flex-column{
+	flex-direction: column;
+}
+
+.flex-grow-1{
+	flex-grow: 1;
+}
+.justify-content-center{
+	justify-content: center;
+}
+.all { 
+	background-color: var(--color-background);
+	color: var(--color-text);
+	font-family: var(--font-main);	
+	flex-direction: column;
+	align-items: stretch;
+}
+
+
+
+/* für Header*/
+header{
+	width: 100%;
+	height: 50px;
+	align-items: center;
+	border-bottom: 1px solid var(--color-border-grau);
+	
+}
+.subheader{
+	width: 100%;
+}
+.tittel-as-logo{
+	height: auto;
+	margin-left: 20px;
+}
+.nav-Menu{
+	align-content: center;
+	margin-right: 20px;
+}
+
+nav a {
+    margin-left: 35px;
+    color: var(--color-heading);
+    text-decoration: none;
+    letter-spacing: 2px;
+    }
+
+nav a:hover {
+    color: var(--color-primary);
+}
+.logo {
+    color: var(--color-heading);
+    letter-spacing: 3px;
+    text-decoration: none;
+	font-size: xx-large;
+	font-weight: bold;
+}
+
+
+/*für Dropdown Menu with JS:*/
+.dropdownJS {
+  position: relative;
+  display: none;
+}
+.menu-btn{
+	background: none;
+	border: none;
+	cursor: pointer;
+	width: 30px;
+	padding: 2px;
+	margin-right: 20px;
+	height:auto;
+}
+.menu-btn hr {
+  border: none;               /* Entfernt den Standard-Rahmen */
+  height: 3px;                /* Bestimmt die Dicke der Linien */
+  background-color: var(--color-heading);   /* Farbe der Linien */
+  margin: 5px 0;              /* Abstand zwischen den Linien */
+}
+.dropdown-contentJS{
+	display:none;
+	position: absolute;
+	float: right;
+	right: 0;
+	left: auto;
+	background-color: rgba(8, 8, 8, 0.78); /*macht transparent*/
+    min-width: 160px;
+	overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border: 1px solid var(--color-border-grau);
+    border-radius: 8px; 
+    z-index: 1;
+}
+.dropdown-contentJS a {
+	color: var(--color-text);
+	padding: 12px 14px;
+	display: block;
+	text-decoration: none;
+}
+
+/* Change color of dropdown on hover */
+.dropdown-contentJS a:hover {background-color: var(--color-primary);}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
+
+/*für main*/
+main {
+	flex: 1;
+}
+
+.hero{
+	width: auto;
+	height: 100%;
+	padding: 40px 5%;
+	margin-left: 20px;
+	align-items: center;
+	background-image: url("mars-hero-background.jpg");
+	background-position: center;
+	background-size: cover; 
+	background-repeat: no-repeat;
+	
+}
+.eyebrow {
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 7px;
+    }
+.content{
+	height: 50%;
+}
+.side{
+	width: 50%;
+}
+.intro {
+    margin: 28px 0 36px;
+    font-size: x-large;
+    }
+	
+
+
+.button {
+      display: inline-block;
+      padding: 17px 26px;
+      color: var(--color-heading);
+      background: var(--color-primary);
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+	  cursor: pointer;
+}
+
+
+.button:hover {
+	background: var(--color-mars);
+    transform: translateY(-2px);
+}
+
+.footer{
+	justify-content: flex-end;
+	margin-right: 20px;
+}
+
+facts {
+    flex-direction: row;
+	margin-right: 20px;
+	justify-content: flex-end;
+}
+.fact {
+    display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+    padding: 22px 25px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    }
+.fact:hover {
+    border: 2px solid var(--color-mars-dark);
+    }
+
+.fact small {
+    margin-bottom: 7px;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    }
+	
+.fact strong {
+    color: var(--color-heading);
+    }
+.glow-box:hover {
+	transform: translateY(-2px);
+	background-color: var(--color-mars-dark);
+	border-radius: 10px;
+	/* Animation zuweisen: Name, Dauer, Endlosschleife, Sanfter Übergang */
+	animation: pulse-shadow 2s infinite ease-in-out;
+}
+
+
+/* Die Animation definieren */
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgb(from var(--color-primary) r g b / 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgb(from var(--color-primary) r g b / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(from var(--color-primary) r g b / 0);
+  }
+}
+
+
+/*für Galerie und SlideShow: */
+.slideshow-container{
+	width: auto;
+	max-width: 600px;
+	position: relative;
+	/*centrieren: */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.slides{
+	display:none;
+}
+/* Number-text (1/3 etc) */
+.numbertext {
+  color: var(--color-heading);
+  font-size: 20px;
+  padding: 20px 20px;
+  position: absolute;
+  bottom: 0;
+}
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: var(--color-heading);
+	font-size: 18px;
+}
+.next {
+	right: 0;
+}
+.prev:hover, .next:hover{
+	/*background-color: rgb(from var(--color-primary) r g b / 0.7);*/
+}
+.pfeil {
+        width: 40px;
+        color: var(--color-heading);
+        background: none;
+        font-size: 60px;
+        cursor: pointer;
+		margin-right: 20px;
+}
+.pfeil:hover {
+        color: var(--color-primary);
+}
+.info {
+    margin: 15px 35px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+/* Container for image text */
+.caption-container {
+	padding: 2px 16px;
+	color: var(--color-heading);
+}
+			
+.bedienung {
+    width: 100%;
+	justify-content: flex-end;
+}
+
+.stage-name {
+	 font-size: 20px;
+	 text-align: center;
+	 color: var(--color-primary);
+}
+#tonButton {
+            padding: 10px 20px;
+            border: 1px solid var(--color-heading);
+            border-radius: 4px;
+            color: var(--color-heading);
+            background: transparent;
+            letter-spacing: 2px;
+            cursor: pointer;
+			float: right;
+			margin-right:20px;
+        }
+#tonButton:hover,
+#tonButton.an {
+            background-color: var(--color-mars-dark);
+}
+
+
+		
+
+/* für Anfrage*/
+form {
+    width: 720px;
+    max-width: 100%;
+    padding: 38px 48px;
+    background-color: rgba(8, 8, 8, 0.78); /*macht transparent*/
+	
+    border: 1px solid var(--color-border-grau);
+    border-radius: 10px;
+	align-items: center;
+	flex-direction: column;
+}
+
+form h1 {
+    margin: 0 0 8px;
+    font-size: 34px;
+    letter-spacing: 2px;
+	color: var(--color-mars);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    color: var(--color-text);
+    font: inherit;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--color-border-grau);
+    border-radius: 7px;
+}
+textarea {
+    resize: vertical;
+	width: 100%;
+    margin-bottom: 20px;
+}
+#comment{
+	width: 100%;
+	margin-bottom: 20px;
+}
+#comment label{
+	 margin-top: 20px;
+}
+option {
+    color: var(--color-surface);
+	padding: 20px;
+}
+#message{
+	margin: 20px;
+	padding: 4px;
+	border: 1px solid var(--color-border);
+    border-radius: 7px;
+}
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+.center-text{
+	text-align: center;
+}
+#message p{
+	margin-top: 5px;
+}
+
+#message h3 {
+	color: var(--color-mars);
+}
+
+.feld {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+
+/* Responsive */
+@media(max-width: 600px){
+	.2{
+		display:none;
+	}
+	.logo {
+		font-size: 28px;
+	}
+/*Andere Navigation*/
+	.dropdownJS {
+		display:inline-block;
+	}
+	nav {
+		display:none;
+	}
+
+	.facts {
+		flex-direction: column;
+	}
+	.fact {
+		width: auto;
+		margin-bottom: 20px;
+	}
+	.footer{
+	justify-content: left;
+	margin-left: 20px;
+}
+}
